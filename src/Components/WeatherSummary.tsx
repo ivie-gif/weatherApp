@@ -26,11 +26,10 @@ export const WeatherSummary: FC<WeatherSummaryProps> = ({ location }) => {
     })();
   }, [location]);
 
-  useEffect(() => {
     if (location) {
       readWeather(location.id).then((Weather) => setWeather(weather));
     }
-  }, []);
+
 
   if (!location || !weather || !forecast) return null;
 
